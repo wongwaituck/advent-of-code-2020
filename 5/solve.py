@@ -2,13 +2,16 @@
 
 import sys
 
+
 NUM_SEATS_PER_ROW = 8
 NUM_ROWS = 128
+
 
 def read_file(filename: str, sep: str = '\n') -> list[str]:
     with open(filename, 'rt') as f:
         data = f.read().split(sep)
         return data
+
 
 def get_num(s: str, n: list[int], bot_char: str, top_char: str) -> int:
     if len(s) == 0:
@@ -35,13 +38,13 @@ def parse_seat_num(s: str) -> int:
 def challenge1(l: list[str]) -> int:
     return max(map(parse_seat_num, l))
 
+
 def challenge2(l: list[str]) -> int:
     seat_ids = list(map(parse_seat_num, l))
     seat_ids.sort()
     for seat_id in seat_ids:
         if seat_id + 1 not in seat_ids and seat_id + 2 in seat_ids:
             return seat_id + 1
-
 
 
 if __name__ == "__main__":
