@@ -57,6 +57,4 @@ if __name__ == "__main__":
     print(f"Number of 1-jolt differences multiplied by the number of 3-jolt differences: {one_jolts * three_jolts}")
 
     print("--- Challenge 2 ---")
-    # remove the 0th entry
-    data = data
     print(f"Total number of distinct ways you can arrange the adapters to connect the charging outlet to your device: {find_chain(tuple(data), 0, highest_rating)}")
