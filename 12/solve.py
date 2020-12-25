@@ -70,9 +70,9 @@ def nav_waypoint_rl(op:str, degree:int, wx:int, wy:int) -> tuple[int, int]:
         lambda x, y: (-y, x), # 270 degrees
     ]
     if op == 'R':
-        transformation = transformations[degree//90]
+        transformation = transformations[degree//90 % 4]
     elif op == 'L':
-        transformation = transformations[-degree//90]
+        transformation = transformations[-degree//90 % 4]
     return transformation(wx, wy)
 
 
